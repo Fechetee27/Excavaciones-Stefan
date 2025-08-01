@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Excavaciones Stefan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffcc00; /* Fondo amarillo */
+      color: #004aad; /* Texto azul */
+    }
+    header {
+      background-color: #ffcc00;
+      color: #004aad;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #ffcc00;
+      padding: 10px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: #004aad;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #ccc;
+    }
+    h2 {
+      color: #004aad;
+      border-bottom: 3px solid #ffcc00;
+      padding-bottom: 5px;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 280px;
+      margin: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 6px #aaa;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #004aad;
+      color: white;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+      .gallery img {
+        max-width: 90%;
+      }
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Lightbox styles */
+    #lightbox {
+      position: fixed;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      user-select: none;
+    }
+    #lightbox span.close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10000;
+    }
+    #lightbox span.nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 60px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10000;
+      padding: 0 15px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    #lightbox span.nav:hover {
+      background: rgba(0,0,0,0.6);
+    }
+    #prev {
+      left: 20px;
+    }
+    #next {
+      right: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo Excavaciones Stefan" style="height: 200px; margin-bottom: 20px;">
+  <h1 style="font-size: 70px; margin: 0;">EXCAVACIONES STEFAN</h1>
+  <p style="font-size: 35px; margin-top: 10px;">Excavaciones profesionales, terrenos agrícolas y obra pública</p>
+</header>
+
+<section id="INICIO">
+  <h2 style="font-size: 40px;">Excavaciones Stefan</h2>
+  <p style="font-size: 25px;">Somos una empresa dedicada a ofrecer servicios de excavación con calidad. Contamos con experiencia en terrenos agrícolas, cimentaciones para casas, masicos y mucho más.</p>
+  <p style="font-size: 25px;">Nuestro equipo utiliza maquinaria moderna y profesional para asegurar los mejores resultados.</p>
+</section>
+
+<section id="SERVICIOS">
+  <h2 style="font-size: 45px;">Servicios</h2>
+  <ul>
+    <li style="font-size: 25px;">Preparación de terrenos agrícolas</li>
+    <li style="font-size: 25px;">Cimentaciones para casas y estructuras</li>
+    <li style="font-size: 25px;">Masicos, piscinas y nivelación de terrenos</li>
+  </ul>
+</section>
+
+<section id="GALERIA">
+  <h2 style="font-size: 45px;">Galería de trabajos</h2>
+  <div class="gallery">
+    <img src="images/galeria/foto1.jpg" alt="Foto 1" data-full="images/galeria/foto1-grande.jpg" />
+    <img src="images/galeria/foto2.jpg" alt="Foto 2" data-full="images/galeria/foto2-grande.jpg" />
+    <!-- Añade más imágenes si quieres -->
+  </div>
+</section>
+
+<section id="CONTACTO">
+  <h2 style="font-size: 45px;">Contacto</h2>
+  <p style="font-size: 25px;">Teléfono y WhatsApp: <a href="tel:+34654608721">654 608 721</a></p>
+  <p style="font-size: 25px;">Email: <a href="mailto:stefanexcavaciones@gmail.com">stefanexcavaciones@gmail.com</a></p>
+  <p style="font-size: 25px;">Dirección: C/ Camino Val de la Reguera nº7, Valdealgorfa, Teruel (Aragón)</p>
+  <p style="font-size: 25px;">Síguenos en Instagram:
+    <a href="https://www.instagram.com/excavacionesstefan" target="_blank">@excavacionesstefan</a>
+  </p>
+</section>
+
+<footer>
+  <p>© 2025 Excavaciones Stefan. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Lightbox modal -->
+<div id="lightbox">
+  <span class="close" id="close">&times;</span>
+  <span class="nav" id="prev">&#10094;</span>
+  <img src="" alt="Imagen ampliada" />
+  <span class="nav" id="next">&#10095;</span>
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+  const closeBtn = document.getElementById('close');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  const images = Array.from(document.querySelectorAll('.gallery img'));
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    if(index < 0) index = images.length - 1;
+    if(index >= images.length) index = 0;
+    currentIndex = index;
+    const img = images[currentIndex];
+    lightboxImg.src = img.dataset.full;
+    lightboxImg.alt = img.alt;
+    lightbox.style.display = 'flex';
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      showImage(index);
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    showImage(currentIndex + 1);
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if(e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if(lightbox.style.display === 'flex') {
+      if(e.key === "Escape") {
+        lightbox.style.display = 'none';
+      }
+      else if(e.key === "ArrowLeft") {
+        showImage(currentIndex - 1);
+      }
+      else if(e.key === "ArrowRight") {
+        showImage(currentIndex + 1);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
